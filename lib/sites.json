@@ -14,6 +14,16 @@
             {
                 "schema": "JSON",
                 "type": "String",
+                "name": "IP",
+                "path": [
+                    "stealers",
+                    0, 
+                    "ip"
+                ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
                 "name": "Computer Name",
                 "path": [
                     "stealers",
@@ -6831,3 +6841,4 @@
       }
   ]
 }
+
