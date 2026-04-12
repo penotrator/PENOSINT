@@ -52,7 +52,7 @@
                 ]
             }
         ],
-        "Github": [
+        "GitHub": [
             {
                 "schema": "JSON",
                 "type": "String",
