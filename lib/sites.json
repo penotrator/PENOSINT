@@ -52,6 +52,40 @@
                 ]
             }
         ],
+        "Github": [
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Location",
+                "path": [
+                    "location"
+                ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Email",
+                "path": [
+                    "email"
+                ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Twitter username",
+                "path": [
+                    "twitter_username"
+                ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Name",
+                "path": [
+                    "name"
+                ]
+            }
+        ],
         "Snapchat Stories": [
             {
                 "schema": "HTML",
@@ -2347,16 +2381,17 @@
         "cat" : "coding"
        },
        {
-        "name" : "GitHub",
-        "uri_check" : "https://github.com/{account}",
-        "e_code" : 200,
-        "e_string" : "p-nickname vcard-username d-block",
-        "m_string" : "Not Found",
-        "m_code" : 404,
-        "known" : ["test", "WebBreacher"],
-        "cat" : "coding",
-        "headers" : {
-            "accept" : "text/html"
+        "name": "GitHub",
+        "uri_check": "https://api.github.com/users/{account}",
+        "e_code": 200,
+        "e_string": "avatar_url",
+        "m_string": "\"message\": \"Not Found\"",
+        "m_code": 404,
+        "known": ["test", "WebBreacher"],
+        "cat": "coding",
+        "headers": {
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28"
         }
        },
        {
