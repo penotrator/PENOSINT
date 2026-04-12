@@ -52,6 +52,15 @@
                 ]
             }
         ],
+        "MCUUID (Minecraft)": [
+            {
+                "schema": "JSON",
+                "type": "Array",
+                "item-path": ["name"],
+                "name": "Name History",
+                "path": ["data", "player", "name_history"]
+            }
+        ],
         "GitHub": [
             {
                 "schema": "JSON",
