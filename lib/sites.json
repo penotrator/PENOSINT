@@ -93,6 +93,22 @@
                 "path": [
                     "name"
                 ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Public repos",
+                "path": [
+                    "public_repos"
+                ]
+            },
+            {
+                "schema": "JSON",
+                "type": "String",
+                "name": "Created at",
+                "path": [
+                    "created_at"
+                ]
             }
         ],
         "Snapchat Stories": [
