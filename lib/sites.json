@@ -40,6 +40,17 @@
                     0,
                     "operating_system"
                 ]
+            },
+            {
+                "schema": "JSON",
+                "type": "Array",
+                "item-path": [],
+                "name": "Top Logins",
+                "path": [
+                    "stealers",
+                    0,
+                    "top_logins"
+                ]
             }
         ],
         "Chess.com": [
