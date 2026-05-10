@@ -30,6 +30,7 @@ Features:
 ```
 config - Use to toggle certain settings and change API keys.
 page - Change through pages to see different commands. e.g "page 1"
+help - Gives description about given command and provides a example usage. e.g "help 1"
 ```
 `Use number based on page. e.g "1 |johndoe|"`
 
