@@ -1,5 +1,16 @@
 # PENOSINT
 `A CLI-based OSINT tool for username enumeration, breach lookups, phone intelligence, and IP geolocation.`
+# Installation
+```
+git clone https://github.com/penotrator/PENOSINT
+
+(windows)
+- use RUN.bat to install and run.
+
+(linux)
+- pip install Misc\requirements.txt
+- python main.py 
+```
 # Features
 ```
 Features:
