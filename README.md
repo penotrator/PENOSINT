@@ -3,7 +3,7 @@
 # Features
 ```
 Features:
-- Username              : Scan for a username across 700+ websites with async requests
+- Username              : Scan for a username across 730+ websites with async requests
 - Deep Search           : Automatically follows linked usernames to build a full profile
 - Breach Check          : Query BreachDirectory for leaked credentials, hashes & clear passwords
 - IP Geolocation        : ISP, region, city, ASN, proxy/VPN detection & reverse DNS lookup
@@ -12,10 +12,13 @@ Features:
 - HTML Reports          : Auto-generate styled reports with metadata per scan
 - Configurable          : Toggle NSFW filtering, auto-save, timeout, output directory & API keys
 ```
+<img src="https://raw.githubusercontent.com/penotrator/PENOSINT/refs/heads/main/Misc/Screenshot.png" width="500"/>
+<img src="https://raw.githubusercontent.com/penotrator/PENOSINT/refs/heads/main/Misc/Screenshot2.png" width="500"/>
+
 # Commands
 ```
-config
-page e.g "page 1"
+config - Use to toggle certain settings and change API keys.
+page - Change through pages to see different commands. e.g "page 1"
 ```
 `Use number based on page. e.g "1 |johndoe|"`
 
