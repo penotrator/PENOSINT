@@ -1,4 +1,5 @@
 import os
+import getpass
 
 from modules.misc import clearCLI, Colors, ascii_table
 from modules import misc as settings
@@ -64,6 +65,12 @@ def getBanner():
 888        888        888   Y8888 Y88b. .d88P Y88b  d88P  888   888   Y8888     888   └───────────────┴───────────────┘
 888        8888888888 888    Y888  "Y88888P"   "Y8888P" 8888888 888    Y888     888   {Colors["DIM"]}CTRL+C to go back{Colors["RESET"]}"""
 
+def get_current_user():
+    try:
+        return os.getlogin()
+    except OSError:
+        return os.environ.get("USER") or os.environ.get("USERNAME") or getpass.getuser() or "user"
+
 def configure():
     try:
         os.system("Title PENOSINT")
@@ -75,13 +82,13 @@ def configure():
             print()
 
             raw = input(
-                f'{Colors["RESET"]}┌── <{os.getlogin()}@PENOSINT> ─ [~]\n└──╼ $ '
+                f'{Colors["RESET"]}┌── <{get_current_user()}@PENOSINT> ─ [~]\n└──╼ $ '
             ).strip()
 
             if not raw:
                 print(f'\n{Colors["RED"]}Invalid command. (eg: "1 |value|"){Colors["RESET"]}\n')
                 print("─" * os.get_terminal_size().columns + "\n")
-                os.system("pause")
+                settings.pause()
                 continue
 
             command_parts = raw.split()
@@ -118,7 +125,7 @@ def configure():
                 if not params:
                     print(f'{Colors['RED']}\nNo value provided. (eg: "1 |value|")\n{Colors['RESET']}')
                     print("─" * os.get_terminal_size().columns + "\n")
-                    os.system("pause")
+                    settings.pause()
                     continue
 
                 parsed = parse_value(config_key, params[0])
@@ -126,7 +133,7 @@ def configure():
                 if parsed is None:
                     print(f'{Colors['RED']}\n"{config_key}" expects a {expected_type.__name__}.{Colors['RESET']}\n')
                     print("─" * os.get_terminal_size().columns + "\n")
-                    os.system("pause")
+                    settings.pause()
                     continue
 
                 config[config_key] = parsed
@@ -135,7 +142,7 @@ def configure():
             else:
                 print(f'{Colors['RED']}\nInvalid command. (eg: "1 |value|"){Colors['RESET']}\n')
                 print("─" * os.get_terminal_size().columns + "\n")
-                os.system("pause")
+                settings.pause()
 
             #print("─" * os.get_terminal_size().columns + "\n")
             #os.system("pause")

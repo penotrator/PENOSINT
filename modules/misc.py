@@ -74,6 +74,12 @@ def ascii_table(headers, data):
 def clearCLI():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def pause():
+    if os.name == 'nt':
+        os.system('pause')
+    else:
+        input('Press Enter to continue...')
+
 def Exit():
     quit()
 
