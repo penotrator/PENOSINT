@@ -1,4 +1,5 @@
 import os
+import getpass
 from inspect import signature
 from colorama import init
 
@@ -74,6 +75,12 @@ def getBanner():
 888        888        888   Y8888 Y88b. .d88P Y88b  d88P  888   888   Y8888     888   └───────────────┴───────────────┘
 888        8888888888 888    Y888  "Y88888P"   "Y8888P" 8888888 888    Y888     888   {Colors["RESET"]}[Page {page}/2]{Colors["RESET"]}"""
 
+def get_current_user():
+    try:
+        return os.getlogin()
+    except OSError:
+        return os.environ.get("USER") or os.environ.get("USERNAME") or getpass.getuser() or "user"
+
 try:
     os.system("Title PENOSINT")
 
@@ -86,7 +93,7 @@ try:
         print()
 
         raw = input(
-            f'{Colors["RESET"]}┌── <{os.getlogin()}@PENOSINT> ─ [~]\n└──╼ $ '
+            f'{Colors["RESET"]}┌── <{get_current_user()}@PENOSINT> ─ [~]\n└──╼ $ '
         ).strip()
 
         if not raw:
@@ -109,12 +116,12 @@ try:
                 else:
                     print(f'\n{Colors["RED"]}Page does not exist.{Colors["RESET"]}\n')
                     print("─" * os.get_terminal_size().columns + "\n")
-                    os.system("pause")
+                    settings.pause()
 
             except (IndexError, ValueError):
                 print(f'\n{Colors["RED"]}Usage: page <number>{Colors["RESET"]}\n')
                 print("─" * os.get_terminal_size().columns + "\n")
-                os.system("pause")
+                settings.pause()
 
             continue
 
@@ -131,19 +138,19 @@ try:
                     print(f'\n{Colors["RED"]}Command not found.{Colors["RESET"]}\n')
 
                 print("─" * os.get_terminal_size().columns + "\n")
-                os.system("pause")
+                settings.pause()
 
             except (IndexError, ValueError):
                 print(f'\n{Colors["RED"]}Usage: help <number>{Colors["RESET"]}\n')
                 print("─" * os.get_terminal_size().columns + "\n")
-                os.system("pause")
+                settings.pause()
 
             continue
 
         if command not in current_commands:
             print(f'\n{Colors["RED"]}Invalid command.{Colors["RESET"]}\n')
             print("─" * os.get_terminal_size().columns + "\n")
-            os.system("pause")
+            settings.pause()
             continue
 
         params = []
@@ -190,7 +197,7 @@ try:
             continue
 
         print("\n" + "─" * os.get_terminal_size().columns + "\n")
-        os.system("pause")
+        settings.pause()
 
 except KeyboardInterrupt:
     print()
